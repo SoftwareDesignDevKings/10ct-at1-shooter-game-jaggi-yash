@@ -102,7 +102,7 @@ class Player:
             return
         
         dx = tx = self.x
-        dy = ty - self.y
+        dy = ty = self.y
         dist = math.sqrt(dx**2 + dy**2)
         if dist == 0:
             return
@@ -124,9 +124,9 @@ class Player:
 
             bullet = Bullet(self.x, self.y, final_vx, final_vy, self.bullet_size)
             self.bullets.append(bullet)
-        self.shoot.timer = 0
+        self.shoot_timer = 0
 
-    def shoot_toward_mouce(self, pos):
+    def shoot_toward_mouse(self, pos):
         mx, my = pos # m denotes mouse
         self.shoot_toward_position(mx, my)
 

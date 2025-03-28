@@ -4,7 +4,6 @@ import random
 import os
 
 import app
-
 from player import Player
 from enemy import Enemy
 from coin import Coin 
@@ -66,7 +65,7 @@ class Game:
             self.handle_events()    # Check for user input or other events.
             
             if not self.game_over:
-                self.update()       # Only update if the game is not over.
+                self.update()     # Only update if the game is not over.
             
             self.draw()             # Draw everything on screen.
             
@@ -85,7 +84,7 @@ class Game:
                         self.running = False
                 else:
                     if event.key == pygame.K_SPACE:
-                        nearest_enemy = self.find_neareast_enemy()
+                        nearest_enemy = self.find_nearest_enemy()
                         if nearest_enemy:
                             self.player.shoot_toward_enemy(nearest_enemy)
             elif event.type == pygame.MOUSEBUTTONDOWN:
@@ -157,7 +156,7 @@ class Game:
         collided = False
         for enemy in self.enemies:
             if enemy.rect.colliderect(self.player.rect):
-                collied = True
+                collided = True
                 break
         
         if collided:
