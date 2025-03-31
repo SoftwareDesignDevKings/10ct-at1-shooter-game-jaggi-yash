@@ -289,4 +289,4 @@ class Game:
             self.upgrade_options = self.pick_random_upgrades(3)
 
             # Increase enemy spawns each time we level up
-            self.enemies_per_spawn += 1 
+            self.enemies_per_spawn += 1
