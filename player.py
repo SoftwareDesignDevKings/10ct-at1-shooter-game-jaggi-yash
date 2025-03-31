@@ -8,6 +8,8 @@ class Player:
     def __init__(self, x, y, assets):
         self.x = x
         self.y = y
+
+        self.level = 1
         
         self.speed = app.PLAYER_SPEED
         self.animations = assets["player"]
@@ -31,12 +33,12 @@ class Player:
         self.bullets = []
     
     def handle_input(self):
-        # TODO: 1. Capture Keyboard Input
+        # Capture Keyboard Input
         keys = pygame.key.get_pressed()
         
         vel_x, vel_y = 0, 0
         
-        # TODO: 2. Adjust player position with keys pressed...
+        # Adjust player position with keys pressed
         if keys[pygame.K_LEFT]:
             # Move character left
             vel_x -= self.speed
